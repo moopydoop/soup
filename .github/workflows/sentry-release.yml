@@ -30,6 +30,8 @@ jobs:
   make-bug:
       name: check outcode
       runs-on: ubuntu-18.04
+      env: 
+        GITHUB_SHA: $GITHUB_SHA
       steps:
         - name: Checkout code
           uses: actions/checkout@v2
@@ -44,5 +46,4 @@ jobs:
 
         - name: run python
           run: |
-            export GITHUB_SHA=$GITHUB_SHA
             python script.py
