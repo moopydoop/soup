@@ -46,4 +46,4 @@ jobs:
 
         - name: run python
           run: |
-            python script.py
+            python script.py $GITHUB_SHA
