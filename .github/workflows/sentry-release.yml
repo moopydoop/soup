@@ -14,11 +14,10 @@ jobs:
       SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
     steps:
       - uses: actions/checkout@v2
-      - name: Create new Sentry release and deploy
         with:
           fetch-depth: 0
 
-        run: |
+      - run: |
           # Install Sentry CLI
           curl -sL https://sentry.io/get-cli/ | bash
 
