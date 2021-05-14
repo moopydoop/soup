@@ -15,6 +15,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Create new Sentry release and deploy
+        with:
+          fetch-depth: 0
 
         run: |
           # Install Sentry CLI
