@@ -1,7 +1,7 @@
 import os
 import sentry_sdk
 
-version = os.environ.get('$GITHUB_SHA', '1.0.0')
+version = os.environ.get('GITHUB_SHA', '14.0.0')
 
 sentry_sdk.init(dsn='https://39529b924487415380f43acf9a7d2335@o49697.ingest.sentry.io/5765882', release=version)
 
