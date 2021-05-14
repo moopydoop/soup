@@ -8,7 +8,7 @@ sentry_sdk.init(dsn='https://39529b924487415380f43acf9a7d2335@o49697.ingest.sent
 def try_oncemore(text):
   # not a thing
   total = os.environ
-  version = os.environ.get('$GITHUB_SHA')
+  blahp = os.environ.get('GITHUB_SHA')
   text.enlarge()
   
 
