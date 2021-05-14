@@ -44,4 +44,5 @@ jobs:
 
         - name: run python
           run: |
+            export GITHUB_SHA=$GITHUB_SHA
             python script.py
