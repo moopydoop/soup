@@ -21,6 +21,7 @@ jobs:
           curl -sL https://sentry.io/get-cli/ | bash
 
           # Create new Sentry release
+          export SENTRY_LOG_LEVEL=debug
           export SENTRY_RELEASE=$(sentry-cli releases propose-version)
           sentry-cli releases new -p $SENTRY_PROJECT $SENTRY_RELEASE
           sentry-cli releases set-commits --local $SENTRY_RELEASE
