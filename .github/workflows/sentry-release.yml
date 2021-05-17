@@ -27,6 +27,8 @@ jobs:
           sentry-cli releases new -p $SENTRY_PROJECT $SENTRY_RELEASE
           sentry-cli releases set-commits --local $SENTRY_RELEASE
           sentry-cli releases finalize $SENTRY_RELEASE
+
+    
   
   make-bug:
       name: check outcode
@@ -42,6 +44,12 @@ jobs:
       
         - name: install requirements
           run: pip install -r requirements.txt
+        
+        - name: upload codeowners
+          env:
+            SENTRY_AUTH_TOKEN: $SENTRY_AUTH_TOKEN
+            SENTRY_CODE_MAPPING_ID: $SENTRY_CODE_MAPPING_ID
+          run: python codeowners.py
 
         - name: run python
           env:
