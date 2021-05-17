@@ -7,12 +7,10 @@ sentry_sdk.init(dsn='https://39529b924487415380f43acf9a7d2335@o49697.ingest.sent
 
 def try_oncemore(text):
   # not a thing
-  total = os.environ
-  blahp = os.environ.get('GITHUB_SHA')
   text.enlarge()
   
 
 try: 
-   try_oncemore('meep')
+   not_a_funtion('meep')
 except Exception as err:
    sentry_sdk.capture_exception(err)
