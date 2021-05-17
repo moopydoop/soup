@@ -5,7 +5,7 @@ import requests
 
 # requests.post(url, data)
 
-URL = "https://sentry.io/api/0/organizations/meredith/soup/codeowners/"
+URL = "https://sentry.io/api/0/projects/meredith/soup/codeowners/"
 
 def get_file():
     with open('./.github/CODEOWNERS', 'rt') as f:
