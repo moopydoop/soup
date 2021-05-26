@@ -47,8 +47,8 @@ jobs:
         
         - name: upload codeowners
           env:
-            SENTRY_AUTH_TOKEN: $SENTRY_AUTH_TOKEN
-            SENTRY_CODE_MAPPING_ID: $SENTRY_CODE_MAPPING_ID
+            SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+            SENTRY_CODE_MAPPING_ID: ${{ secrets.SENTRY_CODE_MAPPING_ID }}
           run: python codeowners.py
 
         - name: run python
