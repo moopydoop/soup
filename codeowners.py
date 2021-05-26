@@ -8,7 +8,7 @@ import requests
 URL = "https://sentry.io/api/0/projects/meredith/soup/codeowners/"
 
 def get_file():
-    with open('./.github/CODEOWNERS', 'rt') as f:
+    with open('./.github/CODEOWNERS', 'rt', encoding="utf-8") as f:
         print("hello")
         data = f.read()
     print(data)
