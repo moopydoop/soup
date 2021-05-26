@@ -18,13 +18,13 @@ def get_file():
 def upload_file(file_data, f):
     token = os.environ.get("SENTRY_AUTH_TOKEN")
     code_mapping_id = os.environ.get("SENTRY_CODE_MAPPING_ID")
-    headers = {"Authorization": f"Bearer {token}"}
+    headers = {"Authorization": f"Bearer {token}", "content-type": "application/json"}
     data = {
         "codeMappingId": code_mapping_id,
         "raw": file_data,
     }
     try:
-        resp = requests.post(URL, headers=headers, data=data)
+        resp = requests.post(URL, headers=headers, json=data)
         resp.raise_for_status()
     except Exception as e:
         print(code_mapping_id)
