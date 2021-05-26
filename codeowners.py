@@ -18,7 +18,7 @@ def get_file():
 def upload_file(file_data, f):
     token = os.environ.get("SENTRY_AUTH_TOKEN")
     code_mapping_id = os.environ.get("SENTRY_CODE_MAPPING_ID")
-    headers = {"Authentication": f"Bearer {token}"}
+    headers = {"Authorization": f"Bearer {token}"}
     data = {
         "codeMappingId": code_mapping_id,
         "raw": file_data,
