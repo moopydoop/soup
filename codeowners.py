@@ -25,7 +25,9 @@ def upload_file(file_data, f):
     }
     try:
         resp = requests.post(URL, headers=headers, data=data)
+        resp.raise_for_status()
     except Exception as e:
+        print(code_mapping_id)
         print(f"something happened {str(e)}")
 
     print(resp.status_code)
